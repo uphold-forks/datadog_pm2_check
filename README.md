@@ -1,5 +1,5 @@
 # Datadog [PM2][pm2] check
-A check for pm2 processes for DataDog
+A check for [pm2][pm2] processes for DataDog
 
 ### Installation
 
