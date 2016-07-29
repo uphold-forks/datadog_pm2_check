@@ -1,7 +1,6 @@
 #  PYTHONPATH=.:/usr/share/datadog/agent/ python checks.d/pm2.py
 import subprocess
 import json
-import time
 
 from checks import AgentCheck
 
@@ -39,4 +38,3 @@ if __name__ == '__main__':
         print
         for m in check.get_metrics():
             print m
-
