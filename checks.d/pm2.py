@@ -18,7 +18,10 @@ class Pm2(AgentCheck):
         for instance in load_json(instance['command'].split(' ')):
             node_app_instance = instance['pm2_env']['NODE_APP_INSTANCE']
 
-            tags = ["node_id:%s" % node_app_instance]
+            tags = [
+                "application:%s" % instance['name'],
+                "node_id:%s" % node_app_instance
+            ]
 
             # cpu, memory, errors, processes, restart
             self.gauge('pm2.processes.cpu'.format(node_app_instance), instance['monit']['cpu'], tags=tags)
